@@ -48,7 +48,7 @@ if (!isset($path) || $path == "./" || $path == ".\\" || $path == "/" || $path ==
     $path = false;
 
 
-if (isset($_SESSION['session_username']) && $_SESSION['session_username'] == $username && isset($_SESSION['session_password']) && ( strlen($_SESSION['session_password']) === 32 && $_SESSION['session_password'] === md5($password) || password_verify($password, $_SESSION['session_password']) || $_SESSION['session_password'] === $password ) || !$phpfm_auth)
+if ( isset($_SESSION['session_username']) && $_SESSION['session_username'] == $username && isset($_SESSION['session_password']) && password_verify($password, $_SESSION['session_password']) || !$phpfm_auth )
 {
     if (!(@opendir($home_directory.$path)) || (substr($home_directory, -1) != "/"))
     {
