@@ -21,9 +21,9 @@ $language       = 'english';
 # Login configuration
 $phpfm_auth     = TRUE;
 $username       = 'admin';
-$password       = 'ae2b1fca515949e5d54fb22b8ed95575';
-$email= 'dev@installatron.com';
-$sitetitle= 'My files';
+$password       = '$2y$10$Kp1weaOYbfVXH0VEVM9Ubu8DcuRL5r4yTfzl/pOMG8RUi4KSQHx1.';
+$email          = 'webmaster@localhost';
+$sitetitle      = 'My files';
 
 # Access configuration
 # Each variable can be set to either TRUE or FALSE.
