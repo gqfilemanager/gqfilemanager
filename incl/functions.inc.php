@@ -185,7 +185,7 @@ function authenticate_user()	## Authenticate user using cookies
 {
  global $username, $password;
 
- if (isset($_COOKIE['cookie_username']) && $_COOKIE['cookie_username'] == $username && isset($_COOKIE['cookie_password']) && $_COOKIE['cookie_password'] == md5($password))
+ if (isset($_COOKIE['cookie_username']) && $_COOKIE['cookie_username'] === $username && isset($_COOKIE['cookie_password']) &&( md5($_COOKIE['cookie_password']) === $password || password_verify($_COOKIE['cookie_password'], $password) ))
   return TRUE;
  else
   return FALSE;
