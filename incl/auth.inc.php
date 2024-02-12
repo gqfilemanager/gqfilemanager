@@ -9,7 +9,11 @@ ini_set('session.use_trans_sid', 0);
 if (isset($session_save_path)) session_save_path($session_save_path);
 session_start();
 
-if ( isset($_SESSION['session_username']) && $_SESSION['session_username'] === $username && isset($_SESSION['session_password']) && password_verify($password, $_SESSION['session_password']) || !$phpfm_auth);
-else exit("<font color='#CC0000'>Access Denied!</font>");
+if ( !isset($_SESSION['session_loggedin']) && $phpfm_auth )
+{
+ exit("<font color='#CC0000'>Access Denied!</font>");
+}
+ 
+
 
 ?>
