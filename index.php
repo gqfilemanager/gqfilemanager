@@ -48,7 +48,7 @@ if (!isset($path) || $path == "./" || $path == ".\\" || $path == "/" || $path ==
     $path = false;
 
 
-if ( isset($_SESSION['session_username']) && $_SESSION['session_username'] == $username && isset($_SESSION['session_password']) && password_verify($password, $_SESSION['session_password']) || !$phpfm_auth )
+if ( isset($_SESSION['session_loggedin']) || !$phpfm_auth )
 {
     if (!(@opendir($home_directory.$path)) || (substr($home_directory, -1) != "/"))
     {
