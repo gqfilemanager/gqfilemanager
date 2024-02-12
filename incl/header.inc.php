@@ -19,10 +19,10 @@ session_start();
 
 $base_url = "?".SID."&amp;";
 
-if ( isset($_POST['input_username']) && isset($_POST['input_password']) && $_POST['input_username'] === $username && ( strlen($password) === 32 && $_POST['input_password'] === $password || password_verify($_POST['input_password'], $password) ))
+if ( isset($_POST['input_username']) && isset($_POST['input_password']) && $_POST['input_username'] === $username && ( strlen($password) === 32 && md5($_POST['input_password']) === $password || password_verify($_POST['input_password'], $password) ))
 {
     $_SESSION['session_username'] = $_POST['input_username'];
-    $_SESSION['session_password'] = password_hash($_POST['input_password'], PASSWORD_DEFAULT);
+    $_SESSION['session_loggedin'] = true;
 }
 else if ( isset($_GET['action']) && $_GET['action'] === "logout" )
 {
