@@ -145,7 +145,7 @@ return true\"><img src='icon/delete.gif' width=25 height=24 alt='Delete This Fol
     else if ($AllowEdit) print "<td>&nbsp;</td>";
     if ($AllowRename) print "<td align='center'><a href='$base_url&amp;path=".htmlentities(rawurlencode($path))."&amp;filename=".htmlentities(rawurlencode($file['filename']))."&amp;action=rename' OnMouseOut=\"window.status='GateQuest Documents Manager'; return true\" OnMouseOver=\"window.status='Rename This File';
 return true\"><img src='icon/rename.gif' width=25 height=24 alt='$StrRenameFile' border=0></a></td>";
-    if ($AllowDownload) print "<td align='center'><a href='incl/libfile.php?".SID."&amp;path=".htmlentities(rawurlencode($path))."&amp;filename=".htmlentities(rawurlencode($file['filename']))."&amp;action=download' OnMouseOut=\"window.status='GateQuest Documents Manager'; return true\" OnMouseOver=\"window.status='Download This File';
+    if ($AllowDownload) print "<td align='center'><a href='incl/libfile.php?".session_id()."&amp;path=".htmlentities(rawurlencode($path))."&amp;filename=".htmlentities(rawurlencode($file['filename']))."&amp;action=download' OnMouseOut=\"window.status='GateQuest Documents Manager'; return true\" OnMouseOver=\"window.status='Download This File';
 return true\"><img src='icon/download.gif' width=25 height=24 alt='$StrDownloadFile' border=0></a></td>";
     if ($AllowEdit) print "<td align='center'><a href='$base_url&amp;path=".htmlentities(rawurlencode($path))."&amp;filename=".htmlentities(rawurlencode($file['filename']))."&amp;action=delete' OnMouseOut=\"window.status='GateQuest Documents Manager'; return true\" OnMouseOver=\"window.status='Delete This File';
 return true\"><img src='icon/delete.gif' width=25 height=24 alt='$StrDeleteFile' border=0></a></td>";
@@ -171,3 +171,4 @@ print "<br><table class='menu' cellpadding=2 cellspacing=0>";
 print "</table><br />";
 
 ?>
+
