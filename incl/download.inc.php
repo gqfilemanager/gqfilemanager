@@ -18,7 +18,7 @@ if ($AllowDownload)
     print "<td valign='top' colspan=2>";
      print "<center><br />";
       print "$StrDownloadClickLink<br /><br />";
-      print "<a href='incl/libfile.php?".SID."&amp;path=".htmlentities(rawurlencode($path))."&amp;filename=".htmlentities(rawurlencode($filename))."&amp;action=download'>$StrDownloadClickHere <i>\"".htmlentities($filename)."\"</i></a>";
+      print "<a href='incl/libfile.php?".session_id()."&amp;path=".htmlentities(rawurlencode($path))."&amp;filename=".htmlentities(rawurlencode($filename))."&amp;action=download'>$StrDownloadClickHere <i>\"".htmlentities($filename)."\"</i></a>";
      print "<br /><br /></center>";
      print "</td>";
    print "</tr>";
@@ -26,5 +26,6 @@ if ($AllowDownload)
 }
 else
  print "<font color='#CC0000'>$StrAccessDenied</font>";
+
 
 ?>
