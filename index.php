@@ -1,6 +1,6 @@
 <?php
 
-define("VERSION", "1.1");
+define("VERSION", "1.2");
 
 include("./conf/config.inc.php");
 include("./incl/functions.inc.php");
@@ -91,3 +91,4 @@ else
 include("./incl/footer.inc.php");
 
 ?>
+
