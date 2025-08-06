@@ -17,7 +17,7 @@ error_reporting(E_ALL);
 clearstatcache();
 session_start();
 
-$base_url = "?".SID."&amp;";
+$base_url = "?".session_id()."&amp;";
 
 if ( isset($_POST['input_username']) && isset($_POST['input_password']) && $_POST['input_username'] === $username && ( strlen($password) === 32 && md5($_POST['input_password']) === $password || password_verify($_POST['input_password'], $password) ))
 {
@@ -32,3 +32,4 @@ else if ( isset($_GET['action']) && $_GET['action'] === "logout" )
 }
 
 ?>
+
